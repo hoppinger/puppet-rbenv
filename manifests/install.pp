@@ -17,15 +17,12 @@ define rbenv::install(
     require rbenv::dependencies
   }
 
-  exec { "rbenv::checkout ${user}":
-    command => "git clone https://github.com/sstephenson/rbenv.git ${root_path}",
-    user    => $user,
-    group   => $group,
-    creates => $root_path,
-    path    => ['/bin', '/usr/bin', '/usr/sbin'],
-    timeout => 100,
-    cwd     => $home_path,
-    require => Package['git'],
+  vcsrepo { $root_path:
+    ensure   => present,
+    provider => git,
+    source   => 'https://github.com/sstephenson/rbenv.git',
+    user     => $user,
+    group    => $group,
   }
 
   file { "rbenv::rbenvrc ${user}":

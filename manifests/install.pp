@@ -30,7 +30,7 @@ define rbenv::install(
     owner   => $user,
     group   => $group,
     content => template('rbenv/dot.rbenvrc.erb'),
-    require => Exec["rbenv::checkout ${user}"],
+    require => Vcsrepo[$root_path],
   }
 
   exec { "rbenv::shrc ${user}":
@@ -47,6 +47,6 @@ define rbenv::install(
     owner   => $user,
     group   => $group,
     path    => "${root_path}/cache",
-    require => Exec["rbenv::checkout ${user}"]
+    require => Vcsrepo[$root_path],
   }
 }

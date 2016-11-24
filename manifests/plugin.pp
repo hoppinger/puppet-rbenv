@@ -23,7 +23,7 @@ define rbenv::plugin(
       path    => $plugins,
       owner   => $user,
       group   => $group,
-      require => Exec["rbenv::checkout ${user}"],
+      require => Vcsrepo[$root_path],
     }
   }
 

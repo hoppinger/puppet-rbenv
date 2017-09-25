@@ -74,7 +74,7 @@ define rbenv::compile(
     cwd         => $home_path,
     environment => [ 
       "HOME=${home_path}",
-      "TMPDIR=${HOME}/tmp",
+      "TMPDIR=${home_path}/tmp",
       "CONFIGURE_OPTS=${configure_opts}",
     ],
     creates     => "${versions}/${ruby}",

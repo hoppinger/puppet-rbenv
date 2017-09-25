@@ -28,7 +28,8 @@ define rbenv::plugin(
   }
 
   vcsrepo { $destination:
-    ensure   => present,
+    ensure   => latest,
+    revision => 'master',
     provider => git,
     source   => $source,
     user     => $user,

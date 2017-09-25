@@ -72,11 +72,7 @@ define rbenv::compile(
     user        => $user,
     group       => $group,
     cwd         => $home_path,
-    environment => [ 
-      "HOME=${home_path}",
-      "TMPDIR=${home_path}/tmp",
-      "CONFIGURE_OPTS=${configure_opts}",
-    ],
+    environment => [ "HOME=${home_path}", "TMPDIR=${home_path}/tmp", "CONFIGURE_OPTS=${configure_opts}" ],
     creates     => "${versions}/${ruby}",
     path        => $path,
     logoutput   => 'on_failure',

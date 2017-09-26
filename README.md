@@ -6,13 +6,13 @@
 ## About
 
 This project provides powerful manifests for the installation of
-[rbenv](https://github.com/sstephenson/rbenv) (Ruby Version Management).
+[rbenv](https://github.com/rbenv/rbenv) (Ruby Version Management).
 In a nutshell, it supports the following conveniences:
 
 * Defined resources for the installation of rbenvs for one or more users, shared or standalone.
 * Resources for the compilation of ruby interpreters (one or many, custom or predefined ruby build definitions), under specific rbenvs, users.
 * Tools for the installation of arbitrary gems under specific rbenvs.
-* Infrastructure to support rbenv plugins. We have already included [ruby-build](https://github.com/sstephenson/ruby-build) and [rbenv-vars](https://github.com/sstephenson/rbenv-vars) plugins.
+* Infrastructure to support rbenv plugins. We have already included [ruby-build](https://github.com/rbenv/ruby-build) and [rbenv-vars](https://github.com/rbenv/rbenv-vars) plugins.
 * Resource for handling `bundler`.
 
 ## Rbenv installation
@@ -128,7 +128,7 @@ rbenv::plugin { "my-plugin":
 }
 ```
 
-There's also a built-in resource to add [rbenv-vars](https://github.com/sstephenson/rbenv-vars)
+There's also a built-in resource to add [rbenv-vars](https://github.com/rbenv/rbenv-vars)
 for a user:
 
 ```
@@ -138,7 +138,7 @@ rbenv::plugin::rbenvvars { "someuser":
 }
 ```
 
-*NOTICE: `rbenv::install` automatically requires [ruby-build](https://github.com/sstephenson/ruby-build)
+*NOTICE: `rbenv::install` automatically requires [ruby-build](https://github.com/rbenv/ruby-build)
 to compile rubies, if you want to use a different repository, you can specify
 the resource on a separate manifest:*
 

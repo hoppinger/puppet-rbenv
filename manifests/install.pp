@@ -20,7 +20,7 @@ define rbenv::install(
   vcsrepo { $root_path:
     ensure   => present,
     provider => git,
-    source   => 'https://github.com/sstephenson/rbenv.git',
+    source   => 'https://github.com/rbenv/rbenv.git',
     user     => $user,
     group    => $group,
   }
